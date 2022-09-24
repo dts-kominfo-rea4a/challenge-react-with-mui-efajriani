@@ -2,7 +2,7 @@
 // https://mui.com/material-ui/react-text-field/#basic-textfield
 // dan Card
 // https://mui.com/material-ui/react-card/#basic-card
-import { Box, Button, Grid, TextField } from "@mui/material";
+import { Box, Button, TextField } from "@mui/material";
 import { useState } from "react";
 import '../App.css';
 
@@ -59,7 +59,7 @@ const ContactForm = (props) => {
                     <Button sx={{color:"green", marginTop:"1em"}} type="submit" > ADD NEW</Button>
                 </form>
                 
-        </Box>
+        </Box>  
          </>
     );
 }

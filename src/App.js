@@ -5,7 +5,7 @@ import contactsJSON from './data/contacts.json';
 import Contact from './components/Contact';
 import ContactForm from './components/ContactForm';
 import Header from './components/Header';
-import { Grid } from '@mui/material';
+import { Grid, Divider } from '@mui/material';
 
 
 const App = () => {
@@ -27,11 +27,18 @@ const App = () => {
     <div className="App">
       <Header></Header>
       <Grid container>
-        <Grid item xs={5}>
+        <Grid item xs={5} >
           <ContactForm propsSubmitHandler={formSubmitHandler}></ContactForm>
         </Grid>
-        <Grid item xs={7}>
-          <Contact data={contactList}></Contact>
+        <Grid item xs={7} style={{padding:'4em 2em 0em 2em'}}>
+          {contactList.map((kontak)=>{return(<>
+            <Contact data={kontak}></Contact>
+            <Divider></Divider>
+          </>
+            
+
+            );
+                })}
         </Grid>
       </Grid>
       

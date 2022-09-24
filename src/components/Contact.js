@@ -2,7 +2,7 @@
 // Contact component dapat berupa MUI ListItem
 // https://mui.com/material-ui/react-list/#folder-list
 import React from 'react';
-import { Box, Grid, Avatar, Divider, Typography } from '@mui/material';
+import { Box, Grid, Avatar, Typography } from '@mui/material';
 // import { Label } from '@mui/icons-material';
 
 // Kalian bisa membuat CSS sendiri di src/components/Contact.css
@@ -13,30 +13,20 @@ const Contact = ({ data }) => {
     
     return (<>
     <Box component="form"
-            sx={{ bgcolor: '#dbf6f0', padding:'0.5em', margin:'4em 5em',
+            sx={{ bgcolor: '#dbf6f0', padding:'0.5em', 
                 '& .MuiTextField-root': { m: 1, width: '95%' },
             }} noValidate autoComplete="off">
-                {data.map((contactList)=>{return(
-                    <>
-                    <Grid container>
-                    <Grid sx={{width:'20%'}}>
-                        <Avatar src={contactList.photo} style={{width: 85, height: 85, margin:'0.5em',}}> </Avatar>
-                        {console.log(contactList.photo)}
+                <Grid container>
+                    <Grid sx={2}>
+                        <Avatar src={data.photo} style={{width: 85, height: 85, margin:'0.5em',}}> </Avatar>
+                        {console.log(data.photo)}
                     </Grid>
-                    <Grid sx={{width:'80%', textAlign:'left', marginTop:'0.7em'}} style={{alignContent:'left'}}>
-                        <Typography variant='h6'>{contactList.name}</Typography>
-                        <Typography>{contactList.phone}</Typography>
-                        <Typography>{contactList.email}</Typography>
+                    <Grid sx={10} style={{textAlign:'left', marginTop:'0.7em'}}>
+                        <Typography variant='h6'>{data.name}</Typography>
+                        <Typography>{data.phone}</Typography>
+                        <Typography>{data.email}</Typography>
                     </Grid>
-                </Grid>
-                <Divider></Divider>
-                    </>
-                );
-                })}
-                
-
-             
-
+                </Grid>            
         </Box>
 
 
