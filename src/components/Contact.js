@@ -31,10 +31,7 @@ const Contact = ({ data }) => {
                 </Grid>
                 <Divider></Divider>
                     </>
-                
-
                 );
-                
                 })}
                 
 

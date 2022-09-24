@@ -16,7 +16,6 @@ const Header = () => {
   return (
     <>
     <Typography variant="h3" style={{margin:"0.3em 0em"}}>Call a Friend</Typography>
-    {/* <Typography variant="h5">Your friendly contact app</Typography> */}
     <Divider sx={{marginBottom:'0em'}}>
       Your friendly contact app
     </Divider>

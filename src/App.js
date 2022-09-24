@@ -28,7 +28,7 @@ const App = () => {
       <Header></Header>
       <Grid container>
         <Grid item xs={5}>
-          <ContactForm propsContact={formSubmitHandler}></ContactForm>
+          <ContactForm propsSubmitHandler={formSubmitHandler}></ContactForm>
         </Grid>
         <Grid item xs={7}>
           <Contact data={contactList}></Contact>

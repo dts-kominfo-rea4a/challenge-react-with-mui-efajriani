@@ -7,7 +7,9 @@ import { useState } from "react";
 import '../App.css';
 
 
-const ContactForm = (propsContact) => {
+const ContactForm = (props) => {    
+     // Form berisi name, phone, email, dan photo url
+    // Buatlah state newContact berupa objek sesuai dengan data yang ada
 
     const [inputName, setInputName]=useState("");
     const [inputPhone, setInputPhone]=useState("");
@@ -16,41 +18,32 @@ const ContactForm = (propsContact) => {
 
     // const newId = contact[contact.length - 1].id + 1;
 
-    const InputOnChangeName = (event) =>{
+    const onChangeName = (event) =>{
         setInputName(event.target.value);
     }
-
-    const InputOnChangePhone = (event) =>{
+    const onChangePhone = (event) =>{
         setInputPhone(event.target.value);
     }
-
-    const InputOnChangeEmail = (event) =>{
+    const onChangeEmail = (event) =>{
         setInputEmail(event.target.value);  
     }
-
-    const InputOnChangeUrl = (event) =>{
+    const onChangeUrl = (event) =>{
         setInputUrl(event.target.value);
     }
-
-    const formSubmitHandler = (event) =>{
-        event.preventDefault();
-        
-        propsContact.propsSubmitHandler({
-            // "id": newId,
+    const formOnSubmitHandler = (event) =>{
+        event.preventDefault();    
+        props.propsSubmitHandler({
             "name":inputName,
             "phone":inputPhone,
             "email":inputEmail,
-            "url":inputUrl});
-
-        // const tambah=[...contact, ];
+            "url":inputUrl
+        });
         setInputName("");
         setInputPhone("");
         setInputEmail("");
         setInputUrl("");
-        // setContact(tambah);
     }
-    // Form berisi name, phone, email, dan photo url
-    // Buatlah state newContact berupa objek sesuai dengan data yang ada
+   
 
     return (
         <>
@@ -58,16 +51,12 @@ const ContactForm = (propsContact) => {
             sx={{ bgcolor: '#f3f1eb', padding:'0.5em', margin:'4em 2em',
                 '& .MuiTextField-root': { m: 1, width: '95%' },
             }} noValidate autoComplete="off" >
-                <form onSubmit={formSubmitHandler}>
-                <Grid>
-                    <TextField id="name" label="Name" variant="filled" value={inputName} onChange={InputOnChangeName}/>
-                    <TextField id="phone" label="Phone" variant="filled" value={inputPhone} onChange={InputOnChangePhone}/>
-                    <TextField id="email" label="Email" variant="filled" value={inputEmail} onChange={InputOnChangeEmail}/>
-                    <TextField id="url" label="Photo URL" variant="filled" value={inputUrl} onChange={InputOnChangeUrl}/>
-                </Grid>
-                <Grid justifyContent="left">
-                    <Button sx={{color:"green", marginTop:"1em"}} type="Submit" onClick={{formSubmitHandler}}> ADD NEW</Button>
-                </Grid>
+                <form onSubmit={formOnSubmitHandler}>
+                    <TextField id="name" label="Name" variant="filled" onChange={onChangeName}/>
+                    <TextField id="phone" label="Phone" variant="filled" onChange={onChangePhone}/>
+                    <TextField id="email" label="Email" variant="filled" onChange={onChangeEmail}/>
+                    <TextField id="url" label="Photo URL" variant="filled" onChange={onChangeUrl}/>
+                    <Button sx={{color:"green", marginTop:"1em"}} type="submit" > ADD NEW</Button>
                 </form>
                 
         </Box>
