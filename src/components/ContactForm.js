@@ -38,13 +38,12 @@ const ContactForm = (props) => {
             "email":inputEmail,
             "url":inputUrl
         });
-        // setInputName("");
-        // setInputPhone("");
-        // setInputEmail("");
-        // setInputUrl("");
+        setInputName("");
+        setInputPhone("");
+        setInputEmail("");
+        setInputUrl("");
     }
    
-
     return (
         <>
         <Card component="form"
