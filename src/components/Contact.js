@@ -17,11 +17,10 @@ const Contact = ({ data }) => {
                 '& .MuiTextField-root': { m: 1, width: '95%' },
             }} noValidate autoComplete="off">
                 <Grid container>
-                    <Grid sx={2}>
-                        <Avatar src={data.photo} style={{width: 85, height: 85, margin:'0.5em',}}> </Avatar>
-                        {console.log(data.photo)}
+                    <Grid item >
+                        <Avatar src={data.photo} style={{width: 85, height: 85, margin:'0.5em', alt:''}}> </Avatar>
                     </Grid>
-                    <Grid sx={10} style={{textAlign:'left', marginTop:'0.7em'}}>
+                    <Grid item style={{textAlign:'left', marginTop:'0.7em'}}>
                         <Typography variant='h6'>{data.name}</Typography>
                         <Typography>{data.phone}</Typography>
                         <Typography>{data.email}</Typography>
