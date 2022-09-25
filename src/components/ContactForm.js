@@ -30,13 +30,13 @@ const ContactForm = (props) => {
     const onChangeUrl = (event) =>{
         setInputUrl(event.target.value);
     }
-    const formOnSubmitHandler = (event) =>{
+    const addContactHandler = (event) =>{
         event.preventDefault();    
         props.propsSubmitHandler({
-            "name":inputName,
-            "phone":inputPhone,
-            "email":inputEmail,
-            "url":inputUrl
+            inputName,
+            inputPhone,
+            inputEmail,
+            inputUrl
         });
         setInputName("");
         setInputPhone("");
@@ -50,12 +50,14 @@ const ContactForm = (props) => {
             sx={{ bgcolor: '#f3f1eb', padding:'0.5em', margin:'4em 2em',
                 '& .MuiTextField-root': { m: 1, width: '95%' },
             }}>
-                <form onSubmit={formOnSubmitHandler}>
+                <form 
+                // onSubmit={formOnSubmitHandler}
+                >
                     <TextField type="text" label="Name" variant="filled" value={inputName} onChange={onChangeName}/>
                     <TextField type="text" label="Phone" variant="filled" value={inputPhone} onChange={onChangePhone}/>
                     <TextField type="text" label="Email" variant="filled" value={inputEmail} onChange={onChangeEmail}/>
                     <TextField type="text" label="Photo URL" variant="filled" value={inputUrl} onChange={onChangeUrl}/>
-                    <Button sx={{color:"green", marginTop:"1em"}} type="submit" > ADD NEW</Button>
+                    <Button sx={{color:"green", marginTop:"1em"}} type="submit" onClick={addContactHandler} > ADD NEW</Button>
                 </form>
                 
         </Card>  

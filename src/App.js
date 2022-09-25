@@ -27,18 +27,16 @@ const App = () => {
     <div className="App">
       <Header></Header>
       <Grid container>
-        <Grid item xs={5} >
+        <Grid item style={{width:'45%'}}>
           <ContactForm propsSubmitHandler={formSubmitHandler}></ContactForm>
         </Grid>
-        <Grid item xs={7} style={{padding:'4em 2em 0em 2em'}}>
+        <Grid item style={{width:'55%', padding:'4em 2em 0em 2em'}}>
           {contactList.map((kontak)=>{return(<>
             <Contact data={kontak}></Contact>
             <Divider></Divider>
           </>
-            
-
             );
-                })}
+          })}
         </Grid>
       </Grid>
       
