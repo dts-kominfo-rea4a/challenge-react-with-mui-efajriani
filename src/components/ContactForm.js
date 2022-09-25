@@ -2,7 +2,7 @@
 // https://mui.com/material-ui/react-text-field/#basic-textfield
 // dan Card
 // https://mui.com/material-ui/react-card/#basic-card
-import { Button, Card, List, ListItem, TextField } from "@mui/material";
+import { Button, Box, List, ListItem, TextField } from "@mui/material";
 import { useState } from "react";
 import '../App.css';
 
@@ -15,8 +15,6 @@ const ContactForm = (props) => {
     const [inputPhone, setInputPhone]=useState("");
     const [inputEmail, setInputEmail]=useState("");
     const [inputUrl, setInputUrl]=useState("");
-
-    // const newId = contact[contact.length - 1].id + 1;
 
     const onChangeName = (event) =>{
         setInputName(event.target.value);
@@ -46,7 +44,7 @@ const ContactForm = (props) => {
    
     return (
         <>
-        <Card component="form"
+        <Box component="form"
             sx={{ bgcolor: '#f3f1eb', padding:'0.5em', margin:'4em 2em',
                 '& .MuiTextField-root': { m: 1, width: '95%' },
             }}>
@@ -72,7 +70,7 @@ const ContactForm = (props) => {
                     </List>
                 {/* </form> */}
                 
-        </Card>  
+        </Box>  
          </>
     );
 }
