@@ -18,8 +18,8 @@ const Contact = ({ data }) => {
             }} noValidate autoComplete="off">
                 <Grid container>
                     <Grid item >
-                        <Avatar style={{width: 85, height: 85, margin:'0.5em'}}> 
-                        <img src={data.photo} alt={data.photo} >
+                        <Avatar src={data.photo} alt={data.photo} style={{width: 85, height: 85, margin:'0.5em'}}> 
+                        <img  >
                         </img></Avatar>
                     </Grid>
                     <Grid item style={{textAlign:'left', marginTop:'0.7em'}}>
