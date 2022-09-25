@@ -33,10 +33,10 @@ const ContactForm = (props) => {
     const addContactHandler = (event) =>{
         event.preventDefault();    
         props.propsSubmitHandler({
-            inputName,
-            inputPhone,
-            inputEmail,
-            inputUrl
+            name:inputName,
+            phone:inputPhone,
+            email: inputEmail,
+            photo: inputUrl
         });
         setInputName("");
         setInputPhone("");

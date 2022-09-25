@@ -28,9 +28,9 @@ const App = () => {
       <Header></Header>
       <Grid container>
         <Grid item style={{width:'45%'}}>
-          <ContactForm propsSubmitHandler={formSubmitHandler}></ContactForm>
+          <ContactForm propsSubmitHandler={(data)=>formSubmitHandler(data)}></ContactForm>
         </Grid>
-        <Grid item style={{width:'55%', padding:'4em 2em 0em 2em'}}>
+        <Grid item style={{width:'55%', padding:'4em 2em 2em 4em', marginLeft:''}}>
           {contactList.map((kontak)=>{return(<>
             <Contact data={kontak}></Contact>
             <Divider></Divider>

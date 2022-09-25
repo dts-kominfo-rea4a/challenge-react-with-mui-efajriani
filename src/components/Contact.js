@@ -13,16 +13,15 @@ const Contact = ({ data }) => {
     
     return (<>
     <Box component="form"
-            sx={{ bgcolor: '#dbf6f0', padding:'0.5em', 
+            sx={{ bgcolor: '#dbf6f0', padding:'0.5em',
                 '& .MuiTextField-root': { m: 1, width: '95%' },
             }} noValidate autoComplete="off">
-                <Grid container>
+                <Grid container >
                     <Grid item >
                         <Avatar src={data.photo} alt={data.photo} style={{width: 85, height: 85, margin:'0.5em'}}> 
-                        <img  >
-                        </img></Avatar>
+                        </Avatar>
                     </Grid>
-                    <Grid item style={{textAlign:'left', marginTop:'0.7em'}}>
+                    <Grid item style={{textAlign:'left', marginTop:'0.7em' ,marginLeft:'1.5em'}}>
                         <Typography variant='h6'>{data.name}</Typography>
                         <Typography>{data.phone}</Typography>
                         <Typography>{data.email}</Typography>
